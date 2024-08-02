@@ -1,0 +1,53 @@
+.container {
+  background-color: var(--accent__background);
+  width: 100%;
+  padding-top: 60px;
+  padding-inline: clamp(20px, 5vw, 80px);
+  // padding-left: clamp(40px, 5vw, 80px);
+}
+
+.card-box-shadow {
+  box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.bred {
+  border: 1px solid red;
+}
+
+.bGreen {
+  border: 1px solid green;
+}
+
+.bPurple {
+  border: 1px solid purple;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mt-31 {
+  margin-top: 31px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mt-52 {
+  margin-top: 52px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-46 {
+  margin-top: 46px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}

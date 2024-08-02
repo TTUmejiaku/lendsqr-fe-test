@@ -1,13 +1,13 @@
 # TODO
 
-[] - Boostrap react project with vite
-[] - Install and configure dependencies:
+[x] - Boostrap react project with vite
+[x] - Install and configure dependencies:
 
-- radix
-- tanstack-router
+- ~~tanstack-router~~
+- ~~sass~~
+- ~~tanstack-table~~
+- ~~date-fns~~
 - uuid
-- sass
-- tanstack-table
-- date-fns
+- radix
 
 [] - Build login page.

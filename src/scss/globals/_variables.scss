@@ -1,0 +1,22 @@
+:root {
+  /***** colors *****/
+  --pri__cyan: hsl(180, 60%, 51%); //#39CDCC
+  --pri__blue: hsl(220, 58%, 31%); //#213F7D
+  --pri__blue-text: hsla(224, 20%, 41%, 0.851); //#545F7D
+  --accent__background: #fbfbfb; //#FBFBFB
+
+  /***** fonts *****/
+  --ff__mulish: "Mulish", sans-serif;
+  --ff__work-sans: "Work Sans", sans-serif;
+  --fs-xLarge: clamp(3rem, 1rem + 4.2vw, 4.5rem);
+  --fs-large: clamp(1.9rem, 1rem + 3.5vw, 2.5rem);
+  --fs-normal: clamp(1.1rem, 0.875rem + 5.5vw, 1.5rem);
+  --fs-small: clamp(0.9rem, 0.7rem + 1vw, 1.1rem);
+  --fs-small-2x: clamp(0.7rem, 0.6rem + 1vw, 0.8rem);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
