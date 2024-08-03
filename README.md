@@ -11,3 +11,4 @@
 - radix
 
 [x] - Build login page.
+[] - Build dashboard nav and sidebar.

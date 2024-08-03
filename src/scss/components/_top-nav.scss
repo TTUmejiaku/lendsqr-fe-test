@@ -1,0 +1,94 @@
+@use "../../scss/abstracts/breakpoints" as b;
+@use "../../scss/abstracts/functions.scss" as f;
+@use "../../scss/abstracts/mixins.scss" as m;
+
+.top-nav {
+  width: 100%;
+  box-shadow: 9px 10px 0px -8px rgba(0, 0, 0, 0.02);
+  -webkit-box-shadow: 9px 14px 0px -8px rgba(0, 0, 0, 0.02);
+  -moz-box-shadow: 9px 14px 0px -8px rgba(0, 0, 0, 0.02);
+  font-family: var(--ff__work-sans);
+
+  &__logo {
+    width: clamp(110px, 25vw, 144.8px);
+    height: 30px;
+  }
+
+  &__search {
+    display: none;
+    width: 400px;
+    height: 40px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+
+    @include b.mq-up(large) {
+      display: flex;
+    }
+
+    input {
+      width: 100%;
+      border-radius: 8px 0 0 8px;
+      border: 1px solid var(--pri__blue);
+      padding: 12px 0 12px 20px;
+
+      &::placeholder {
+        font-size: 14px;
+        color: #545f7d8b;
+      }
+    }
+
+    button {
+      background-color: var(--pri__cyan);
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      position: absolute;
+      inset: 0 0 0 85%;
+
+      img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 16px;
+      }
+    }
+  }
+
+  &__user {
+    @include m.flex(row, center, center);
+
+    & a:nth-child(1) {
+      display: none;
+      text-decoration: underline;
+      margin-right: clamp(24px, 8vw, 62px);
+      font-style: normal;
+      font-size: var(--fs-small);
+      color: var(--pri__blue);
+
+      @include b.mq-up(medium) {
+        display: block;
+      }
+    }
+
+    .notification {
+      margin-right: clamp(15px, 5vw, 30px);
+    }
+
+    .avatar {
+      margin-right: 10px;
+      border-radius: 100%;
+    }
+
+    .username {
+      font-weight: 500;
+      font-size: var(--fs-small);
+      color: var(--pri__blue);
+      margin-right: clamp(4px, 2vw, 10px);
+    }
+
+    .arrow-down {
+      cursor: pointer;
+    }
+  }
+}

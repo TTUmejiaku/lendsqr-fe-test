@@ -1,7 +1,23 @@
+@use "../../scss/abstracts/breakpoints" as b;
+@use "../../scss/abstracts/functions.scss" as f;
+@use "../../scss/abstracts/mixins.scss" as m;
+
 .container {
   width: 90vw;
   max-width: 1240px;
   margin-inline: auto;
+}
+
+.top-nav-container {
+  width: 90vw;
+  margin-inline: auto;
+  @include m.flex(row, center, space-between);
+  padding-block: 16px;
+
+  @include b.mq-up(medium) {
+    width: 95vw;
+    padding-block: 24px;
+  }
 }
 
 // .container {

@@ -1,14 +1,6 @@
 import { REGEX_EMAIL, PASSWORD_LENGTH } from "@/constants";
+import { Errors, FormValues } from "@/types";
 import { useState } from "react";
-
-interface FormValues {
-  email: string;
-  password: string;
-}
-
-interface Errors {
-  [key: string]: string | undefined;
-}
 
 export const useFormValidation = (initialValues: FormValues) => {
   const [values, setValues] = useState<FormValues>(initialValues);

@@ -2,14 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { useFormValidation } from "@/hooks";
 import { FileRoute } from "@/constants";
-
-interface Values {
-  email: string;
-  password: string;
-}
+import { FormValues } from "@/types";
 
 export default function LoginForm() {
-  const initialValues: Values = { email: "", password: "" };
+  const initialValues: FormValues = { email: "", password: "" };
 
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
