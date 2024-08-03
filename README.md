@@ -10,4 +10,4 @@
 - uuid
 - radix
 
-[] - Build login page.
+[x] - Build login page.

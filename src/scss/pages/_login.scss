@@ -1,0 +1,70 @@
+@use "../../scss/abstracts/breakpoints" as b;
+@use "../../scss/abstracts/functions.scss" as f;
+@use "../../scss/abstracts/mixins.scss" as m;
+
+.login {
+  // min-height: 100dvh;
+  font-family: var(--ff__avenir-next);
+  padding-block: 30px;
+
+  @include b.mq-up(large) {
+    margin-top: 106px;
+    @include m.flex(column, center, center);
+  }
+
+  &__content {
+    margin-top: 62px;
+    @include m.flex(column, center, center);
+
+    @include b.mq-up(large) {
+      flex-direction: row;
+      gap: 50px;
+      margin-top: 102px;
+    }
+
+    @include b.mq-up(xLarge) {
+      gap: 100px;
+    }
+  }
+
+  &__image-panel {
+    width: 100%;
+
+    img {
+      margin-inline: auto;
+    }
+  }
+
+  &__form-panel {
+    margin-top: 48px;
+    width: 100%;
+
+    @include b.mq-up(large) {
+      margin-top: 0;
+    }
+
+    .header-text {
+      font-weight: bold;
+      font-size: var(--fs-large);
+      color: var(--pri__blue);
+      letter-spacing: -0.1rem;
+      text-align: center;
+
+      @include b.mq-up(large) {
+        text-align: left;
+      }
+    }
+
+    & > p {
+      font-size: var(--fs-normal);
+      font-weight: normal;
+      margin-top: 14px;
+      color: var(--pri__blue-text);
+      text-align: center;
+
+      @include b.mq-up(large) {
+        text-align: left;
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.form {
+  margin-top: 62px;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+
+    .inner-div {
+      position: relative;
+    }
+
+    input {
+      width: 100%;
+      padding: 16px;
+      border-radius: 5px;
+      border: 1px solid #545f7d46;
+
+      &::placeholder {
+        font-size: 14px;
+      }
+
+      &.error {
+        border: 1px solid red;
+      }
+    }
+
+    p {
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      translate: 50% -50%;
+      color: var(--pri__cyan);
+      font-size: 12px;
+      letter-spacing: 0.2rem;
+      cursor: pointer;
+    }
+    .errorMessage {
+      margin-top: 5px;
+      font-size: 14px;
+      color: red;
+    }
+  }
+
+  & > p {
+    font-size: 12px;
+    color: var(--pri__cyan);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+  }
+
+  button {
+    background-color: var(--pri__cyan);
+    font-weight: 500;
+    font-size: 14px;
+    width: 100%;
+    padding-block: 15px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+
+    &.isError {
+      background-color: var(--pri__cyan);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+}
