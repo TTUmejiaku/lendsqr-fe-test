@@ -1,4 +1,4 @@
-import { TopNav } from "@/components";
+import { Sidebar, TopNav } from "@/components";
 import { Outlet, createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/_dashboardLayout")({
@@ -9,7 +9,10 @@ function LayoutComponent() {
   return (
     <div>
       <TopNav />
-      <Outlet />
+      <div className=''>
+        <Sidebar />
+        <Outlet />
+      </div>
     </div>
   );
 }

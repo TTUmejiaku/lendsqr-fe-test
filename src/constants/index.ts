@@ -7,6 +7,7 @@ export const LinkedIn_URL = "https://linkedin.com";
 export enum FileRoute {
   Root = "/",
   Dashboard = "/dashboard",
+  Users = "/users",
   // Insights = "/insights",
   // InsightId = "/insights/$insightId",
   // Contact = "/contact",

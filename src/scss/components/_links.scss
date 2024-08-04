@@ -1,0 +1,25 @@
+.nav-link {
+  display: flex;
+  margin-top: 8px;
+  font-weight: normal;
+  gap: 10px;
+  padding: 11px 0 11px 27px;
+  border-left: 5px solid transparent;
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+
+  &:hover {
+    border-color: var(--pri__cyan);
+    background-color: hsla(180, 60%, 51%, 0.06);
+  }
+
+  p {
+    font-size: 16px;
+    color: var(--pri__blue-text);
+  }
+
+  &-arrow-down {
+    cursor: pointer;
+  }
+}

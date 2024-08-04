@@ -1,4 +1,3 @@
-// import "./top-nav.scss";
 import { lendSqrLogo, bellIcon, arrowDown, searchIcon } from "@/assets/svgs";
 import { avatar } from "@/assets/pngs";
 import { TopNavContainer } from "./containers";
