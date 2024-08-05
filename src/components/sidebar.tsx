@@ -7,9 +7,14 @@ import { sidebarData, SidebarData } from "@/mock-data";
 import { NavLink } from "./navlink";
 import { FileRoute } from "@/constants";
 
-export default function Sidebar() {
+type SidebarProps = {
+  showSidebar: boolean;
+  toggleSidebar: () => void;
+};
+
+export default function Sidebar({ showSidebar, toggleSidebar }: SidebarProps) {
   return (
-    <div className='sidebar'>
+    <div className={`sidebar ${showSidebar ? "show-nav" : ""}`}>
       <div className='sidebar__switch-org'>
         <img src={switchOrganizationIcon} alt='' />
         <p>Switch Organization</p>
@@ -20,16 +25,23 @@ export default function Sidebar() {
         name='Dashboard'
         linkClasses='mt-52'
         url={FileRoute.Dashboard}
+        toggleSidebar={toggleSidebar}
       />
 
       {sidebarData.map((item: SidebarData) => {
         return (
-          <div key={item.title} className=''>
+          <div key={item.title} className='sidebar__link-wrapper'>
             <h3 className='sidebar__link-title'>{item.title}</h3>
             {item.links.map((link, i: number) => {
               const { icon, name, url } = link;
               return (
-                <NavLink key={name + i} icon={icon} name={name} url={url} />
+                <NavLink
+                  key={name + i}
+                  icon={icon}
+                  name={name}
+                  url={url}
+                  toggleSidebar={toggleSidebar}
+                />
               );
             })}
           </div>

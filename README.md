@@ -12,3 +12,6 @@
 
 [x] - Build login page.
 [] - Build dashboard nav and sidebar.
+[] - Add loading spinner to login button.
+[] - Add fly-in animation to sidebar
+[] - Mock json data with mockapi.io

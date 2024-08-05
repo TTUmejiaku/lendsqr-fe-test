@@ -11,13 +11,11 @@
 
   &__logo {
     width: clamp(110px, 25vw, 144.8px);
-    height: 30px;
   }
 
   &__search {
     display: none;
     width: 400px;
-    height: 40px;
     position: relative;
     border-radius: 8px;
     overflow: hidden;
@@ -58,7 +56,7 @@
   &__user {
     @include m.flex(row, center, center);
 
-    & a:nth-child(1) {
+    & a {
       display: none;
       text-decoration: underline;
       margin-right: clamp(24px, 8vw, 62px);
@@ -67,7 +65,7 @@
       color: var(--pri__blue);
 
       @include b.mq-up(medium) {
-        display: block;
+        display: inline-block;
       }
     }
 
@@ -76,15 +74,39 @@
     }
 
     .avatar {
+      width: 40px;
+      height: 40px;
       margin-right: 10px;
       border-radius: 100%;
     }
 
-    .username {
+    .menu-icon {
+      margin-right: clamp(4px, 2vw, 10px);
+      background-color: transparent;
+
+      @include b.mq-up(large) {
+        display: none;
+      }
+
+      &.show-nav {
+        display: none;
+      }
+    }
+  }
+
+  &__username {
+    display: none;
+    margin-right: clamp(4px, 2vw, 10px);
+
+    @include b.mq-up(large) {
+      @include m.flex-ai(row, center);
+      gap: 4px;
+    }
+
+    p {
       font-weight: 500;
       font-size: var(--fs-small);
       color: var(--pri__blue);
-      margin-right: clamp(4px, 2vw, 10px);
     }
 
     .arrow-down {

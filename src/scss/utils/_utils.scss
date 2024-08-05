@@ -1,7 +1,28 @@
+@use "../../scss/abstracts/breakpoints" as b;
+@use "../../scss/abstracts/functions.scss" as f;
+@use "../../scss/abstracts/mixins.scss" as m;
+
 .card-box-shadow {
   box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  width: 90vw;
+  max-width: 1240px;
+  margin-inline: auto;
+}
+
+.top-nav-container {
+  width: 95vw;
+  margin-inline: auto;
+  @include m.flex(row, center, space-between);
+  padding-block: 16px;
+
+  @include b.mq-up(medium) {
+    padding-block: 24px;
+  }
 }
 
 .bred {

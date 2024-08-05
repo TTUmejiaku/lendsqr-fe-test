@@ -1,0 +1,28 @@
+@use "../../scss/abstracts/breakpoints" as b;
+@use "../../scss/abstracts/functions.scss" as f;
+
+.dashboard {
+  &__container {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    background-color: var(--accent__background);
+  }
+
+  &__content {
+    padding: 30px;
+    font-family: var(--ff__work-sans), sans-serif;
+
+    @include b.mq-up(large) {
+      margin-left: 283px;
+      padding: 60px;
+    }
+  }
+
+  &__title {
+    font-size: f.rem(24);
+    color: var(--pri__blue);
+    font-weight: 500;
+  }
+}

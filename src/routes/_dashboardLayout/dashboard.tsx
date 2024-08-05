@@ -7,7 +7,7 @@ export const Route = createFileRoute("/_dashboardLayout/dashboard")({
 function Dashboard() {
   return (
     <div className=''>
-      <h1>dashboard</h1>
+      <h1> Main dashboard</h1>
     </div>
   );
 }
