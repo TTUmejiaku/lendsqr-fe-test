@@ -3,14 +3,19 @@
 
 .dashboard {
   &__container {
-    min-height: 100dvh;
+    min-height: calc(100dvh - 80px);
     display: flex;
     flex-direction: row;
     width: 100vw;
     background-color: var(--accent__background);
+
+    @include b.mq-up(large) {
+      min-height: calc(100dvh - 100px);
+    }
   }
 
   &__content {
+    width: 100%;
     padding: 30px;
     font-family: var(--ff__work-sans), sans-serif;
 

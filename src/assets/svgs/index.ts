@@ -25,3 +25,7 @@ export { default as auditLogs } from "./audit-logs.svg";
 export { default as dashboardIcon } from "./dashboard.svg";
 export { default as switchOrganizationIcon } from "./switch-organization.svg";
 export { default as arrowDownLightIcon } from "./arrow-down-light.svg";
+export { default as usersIcon } from "./users-icon-dashboard.svg";
+export { default as activeUsers } from "./active-users-icon.svg";
+export { default as usersWithLoans } from "./users-with-loan-icon.svg";
+export { default as usersWithSavings } from "./users-with-savings-icon.svg";
