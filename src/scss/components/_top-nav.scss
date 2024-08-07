@@ -3,11 +3,15 @@
 @use "../../scss/abstracts/mixins.scss" as m;
 
 .top-nav {
+  background-color: white;
+  position: sticky;
+  top: 0;
   width: 100%;
   box-shadow: 9px 10px 0px -8px rgba(0, 0, 0, 0.02);
   -webkit-box-shadow: 9px 14px 0px -8px rgba(0, 0, 0, 0.02);
   -moz-box-shadow: 9px 14px 0px -8px rgba(0, 0, 0, 0.02);
   font-family: var(--ff__work-sans);
+  z-index: 10;
 
   &__logo {
     width: clamp(110px, 25vw, 144.8px);
@@ -83,6 +87,7 @@
     .menu-icon {
       margin-right: clamp(4px, 2vw, 10px);
       background-color: transparent;
+      cursor: pointer;
 
       @include b.mq-up(large) {
         display: none;

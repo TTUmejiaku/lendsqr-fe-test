@@ -1,5 +1,5 @@
 import { UserInfo } from "@/types";
-import { faker } from "@faker-js/faker";
+import { format, parseISO } from "date-fns";
 
 function parseStringToNumber(str: string) {
   return parseFloat(str.replace(/,/g, ""));
@@ -7,6 +7,18 @@ function parseStringToNumber(str: string) {
 
 export function formatNumber(value: number) {
   return new Intl.NumberFormat().format(value);
+}
+
+export function formatDate(date: string): string {
+  if (!date) return "";
+
+  try {
+    const parsedDate = parseISO(date);
+    return format(parsedDate, "MMM d, yyyy h:mm a");
+  } catch (error) {
+    console.error("Error parsing date:", error);
+    return "";
+  }
 }
 
 export const fetchUsers = async () => {
@@ -23,18 +35,22 @@ export const fetchUsers = async () => {
   }
 };
 
-export function getActiveUsers(userData: UserInfo[], activeMonths: number) {
+export function isActiveDate(date: string, monthsSinceLastActive: number) {
   const now = new Date();
-
-  // Calculate the cutoff date
   const cutoffDate = new Date();
-  cutoffDate.setMonth(now.getMonth() - activeMonths);
+  cutoffDate.setMonth(now.getMonth() - monthsSinceLastActive);
 
-  const activeUsers = userData.filter((user) => {
-    const lastActiveDate = new Date(user.lastActiveDate);
+  const lastActiveDate = new Date(date);
+  return lastActiveDate >= cutoffDate;
+}
 
-    return lastActiveDate >= cutoffDate;
-  });
+export function getActiveUsers(
+  userData: UserInfo[],
+  activeWithinMonths: number
+) {
+  const activeUsers = userData.filter((user) =>
+    isActiveDate(user.lastActiveDate, activeWithinMonths)
+  );
 
   return activeUsers.length;
 }
@@ -52,105 +68,3 @@ export function getUsersWithSavings(userData: UserInfo[]) {
 
   return usersWithSavings.length;
 }
-
-export function generateUserData() {
-  const sex = faker.person.sexType();
-  const firstName = faker.person.firstName(sex);
-
-  return {
-    id: faker.string.uuid(),
-    createdAt: faker.date.past().toISOString(),
-    orgName: faker.company.name(),
-    userName: faker.internet.userName(),
-    lastActiveDate: faker.date.recent().toISOString(),
-    profile: {
-      firstName,
-      lastName: faker.person.lastName(),
-      phoneNumber: faker.phone.number(),
-      email: faker.internet.email(),
-      bvn: parseInt(faker.finance.accountNumber(11)),
-      gender: sex,
-      avatar: faker.image.avatar(),
-      maritalStatus: faker.helpers.arrayElement([
-        "Single",
-        "Married",
-        "Divorced",
-        "Widowed",
-      ]),
-      children: faker.number.int({ min: 0, max: 5 }),
-      address: faker.location.streetAddress(),
-      typeOfResidence: faker.helpers.arrayElement([
-        "Apartment",
-        "House",
-        "Condo",
-        "Studio",
-      ]),
-      currency: faker.finance.currencyCode(),
-    },
-    accountNumber: faker.finance.accountNumber(10),
-    accountBalance: parseFloat(faker.finance.amount()),
-    educationAndEmployment: {
-      level: faker.helpers.arrayElement([
-        "High School",
-        "Bachelor",
-        "Master",
-        "PhD",
-      ]),
-      employmentStatus: faker.helpers.arrayElement([
-        "Employed",
-        "Unemployed",
-        "Self-employed",
-      ]),
-      sector: faker.company.buzzNoun(),
-      duration: `${faker.number.int({ min: 1, max: 20 })} years`,
-      officeEmail: faker.internet.email(),
-      monthlyIncome: [
-        faker.finance.amount({
-          min: 1000,
-          max: 5000,
-          dec: 2,
-          symbol: "",
-          autoFormat: true,
-        }),
-        faker.finance.amount({
-          min: 5000,
-          max: 20000,
-          dec: 2,
-          symbol: "",
-          autoFormat: true,
-        }),
-      ],
-      loanRepayment: faker.finance.amount({
-        min: 1000,
-        max: 20000,
-        dec: 2,
-        symbol: "",
-        autoFormat: true,
-      }),
-    },
-    socials: {
-      facebook: faker.internet.userName(),
-      instagram: faker.internet.userName(),
-      twitter: faker.internet.userName(),
-    },
-    guarantor: {
-      firstName: faker.person.firstName(),
-      lastName: faker.person.lastName(),
-      phoneNumber: parseInt(faker.phone.number().replace(/\D/g, "")),
-      email: faker.internet.email(),
-      relationship: faker.helpers.arrayElement([
-        "Parent",
-        "Sibling",
-        "Friend",
-        "Spouse",
-      ]),
-      gender: faker.person.sex(),
-    },
-  };
-}
-
-// const userData = Array.from({ length: 500 }, generateUserData);
-
-// const jsonData = JSON.stringify(userData, null, 2);
-
-// console.log(jsonData);

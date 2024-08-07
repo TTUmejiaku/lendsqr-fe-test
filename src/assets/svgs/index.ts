@@ -29,3 +29,4 @@ export { default as usersIcon } from "./users-icon-dashboard.svg";
 export { default as activeUsers } from "./active-users-icon.svg";
 export { default as usersWithLoans } from "./users-with-loan-icon.svg";
 export { default as usersWithSavings } from "./users-with-savings-icon.svg";
+export { default as filterIcon } from "./filter-results-icon.svg";

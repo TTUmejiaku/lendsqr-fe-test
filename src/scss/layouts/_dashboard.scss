@@ -16,10 +16,16 @@
 
   &__content {
     width: 100%;
+    max-width: 1840px;
     padding: 30px;
     font-family: var(--ff__work-sans), sans-serif;
+    overflow-x: auto;
 
     @include b.mq-up(large) {
+      margin-left: 240px;
+    }
+
+    @include b.mq-up(xLarge) {
       margin-left: 283px;
       padding: 60px;
     }

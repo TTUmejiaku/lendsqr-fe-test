@@ -13,6 +13,7 @@ import {
   getUsersWithLoan,
   getUsersWithSavings,
 } from "@/lib/utils";
+import UsersTable from "./user-table";
 
 export default function UsersPage() {
   const users = useLoaderData({
@@ -24,7 +25,7 @@ export default function UsersPage() {
   const numberOfUsersWithSavings = getUsersWithSavings(users);
 
   return (
-    <div className='users '>
+    <div className='users'>
       <h1 className='dashboard__title'>Users</h1>
       <div className='users__stats mt-40 '>
         <Card imageURL={usersIcon} title='Users' total={users.length} />
@@ -44,6 +45,7 @@ export default function UsersPage() {
           total={formatNumber(numberOfUsersWithSavings)}
         />
       </div>
+      <UsersTable />
     </div>
   );
 }

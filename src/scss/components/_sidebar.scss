@@ -29,9 +29,12 @@
 
   @include b.mq-up(large) {
     display: block;
-    width: 283px;
     inset-block: 96px 0;
     z-index: 0;
+  }
+
+  @include b.mq-up(xLarge) {
+    width: 283px;
   }
 
   &__switch-org {

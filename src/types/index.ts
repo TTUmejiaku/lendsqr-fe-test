@@ -18,6 +18,7 @@ export type UserInfo = {
   id: string;
   createdAt: string;
   orgName: string;
+  status: string;
   userName: string;
   lastActiveDate: string;
   profile: {

@@ -14,7 +14,7 @@ type SidebarProps = {
 
 export default function Sidebar({ showSidebar, toggleSidebar }: SidebarProps) {
   return (
-    <div className={`sidebar ${showSidebar ? "show-nav" : ""}`}>
+    <div className={`sidebar  ${showSidebar ? "show-nav" : ""}`}>
       <div className='sidebar__switch-org'>
         <img src={switchOrganizationIcon} alt='' />
         <p>Switch Organization</p>
