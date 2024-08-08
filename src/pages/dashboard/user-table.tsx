@@ -10,6 +10,7 @@ import {
   VisibilityState,
 } from "@tanstack/react-table";
 import {
+  TableLegend,
   // FilterTableBoolean,
   // SearchTableGlobal,
   // TableLegend,
@@ -103,7 +104,7 @@ export default function UsersTable() {
         </div>
       </section> */}
       <TableTemplate columnsLength={columns.length} table={table} />
-      {/* <TableLegend table={table} pageSizesArr={[5, 10, 15, 20, 25, 30]} /> */}
+      <TableLegend table={table} pageSizesArr={[5, 10, 15, 20, 30]} />
     </div>
   );
 }

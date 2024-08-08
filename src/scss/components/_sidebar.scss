@@ -12,10 +12,6 @@
   overflow-y: auto;
   font-family: var(--ff__work-sans);
   padding-block: 20px 40px;
-  // box-shadow: 14px -1px 0px -8px rgba(0, 0, 0, 0.03);
-  // -webkit-box-shadow: 14px -1px 0px -8px rgba(0, 0, 0, 0.03);
-  // -moz-box-shadow: 14px -1px 0px -8px rgba(0, 0, 0, 0.03);
-  -ms-overflow-style: none;
   scrollbar-width: none;
   z-index: 100;
 
@@ -31,6 +27,10 @@
     display: block;
     inset-block: 96px 0;
     z-index: 0;
+    box-shadow: 14px -1px 0px -8px rgba(0, 0, 0, 0.03);
+    -webkit-box-shadow: 14px -1px 0px -8px rgba(0, 0, 0, 0.03);
+    -moz-box-shadow: 14px -1px 0px -8px rgba(0, 0, 0, 0.03);
+    -ms-overflow-style: none;
   }
 
   @include b.mq-up(xLarge) {

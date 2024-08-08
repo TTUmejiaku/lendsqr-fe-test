@@ -19,11 +19,6 @@
   &__header {
     position: relative;
     padding-bottom: 20px;
-
-    // &:last-child {
-    //   border: 1px solid red;
-    //   // display: none;
-    // }
   }
 
   &__column-header {
@@ -71,5 +66,44 @@
   &__date {
     font-size: 14px;
     color: var(--pri__blue-text);
+  }
+
+  &__legend {
+    @include m.flex(row, center, space-between);
+    font-family: var(--ff__work-sans);
+    margin-top: 20px;
+    color: var(--pri__blue-text);
+    font-style: 14px;
+
+    &-left {
+      @include m.flex-ai(row, center);
+
+      strong {
+        margin-inline: 4px;
+      }
+    }
+
+    &-center {
+      @include m.flex-ai(row, center);
+      gap: 8px;
+    }
+
+    &-right {
+      @include m.flex-ai(row, center);
+      gap: 8px;
+
+      button {
+        @include m.flex(row, center, center);
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background: rgba(84, 95, 125, 0.4);
+        }
+      }
+    }
   }
 }

@@ -17,7 +17,7 @@
   &__content {
     width: 100%;
     max-width: 1840px;
-    padding: 30px;
+    padding: 20px 20px 80px;
     font-family: var(--ff__work-sans), sans-serif;
     overflow-x: auto;
 
@@ -27,7 +27,7 @@
 
     @include b.mq-up(xLarge) {
       margin-left: 283px;
-      padding: 60px;
+      padding: 50px 60px 100px;
     }
   }
 
