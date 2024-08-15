@@ -1,7 +1,9 @@
-import { Table as TableClass, flexRender } from "@tanstack/react-table";
+import { Table, flexRender } from "@tanstack/react-table";
+import { ColumnHeaderContent } from "./column-header";
+import { useState } from "react";
 
 interface TableTemplateProps<TData> {
-  table: TableClass<TData>;
+  table: Table<TData>;
   columnsLength: number;
 }
 
@@ -9,28 +11,33 @@ export default function TableTemplate<TData>({
   table,
   columnsLength,
 }: TableTemplateProps<TData>) {
+  const [activeColumnId, setActiveColumnId] = useState<string | null>(null);
+
+  const handleHeaderClick = (columnId: string) => {
+    setActiveColumnId((prevId) => (prevId === columnId ? null : columnId));
+  };
+
   return (
-    <table className={`table card-box-shadow `}>
+    <table className={`table box-shadow `}>
       <thead>
         {table.getHeaderGroups().map((headerGroup) => (
           <tr key={headerGroup.id}>
             {headerGroup.headers.map((header) => {
               return (
-                <th
-                  key={header.id}
-                  // {...{
-                  //   style: {
-                  //     width: header.getSize(),
-                  //   },
-                  // }}
-                  className='table__header'
-                >
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
+                <th key={header.id} className='table__header'>
+                  {!header.isPlaceholder && (
+                    <ColumnHeaderContent
+                      column={header.column}
+                      activeColumnId={activeColumnId}
+                      handleHeaderClick={handleHeaderClick}
+                      table={table}
+                    >
+                      {flexRender(
                         header.column.columnDef.header,
                         header.getContext()
                       )}
+                    </ColumnHeaderContent>
+                  )}
                   <div
                     {...{
                       onMouseDown: header.getResizeHandler(),

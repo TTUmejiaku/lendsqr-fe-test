@@ -1,0 +1,70 @@
+@use "../../scss/abstracts/breakpoints" as b;
+@use "../../scss/abstracts/functions.scss" as f;
+@use "../../scss/abstracts/mixins.scss" as m;
+
+.table-filter {
+  z-index: 10;
+  margin-top: 16px;
+  background: white;
+  padding: 30px 20px;
+  border-radius: 0.25rem;
+  width: 270px;
+  box-shadow: 0 0 8px 0 hsla(0, 0%, 0%, 0.25);
+  font-family: var(--ff__work-sans);
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border: none;
+    padding: 0;
+
+    &:not(:last-child) {
+      margin-top: 20px;
+    }
+
+    & input {
+      display: inline-flex;
+      width: 100%;
+      color: black;
+      font-family: var(--ff__work-sans);
+      font-size: 14px;
+      border: 1px solid var(--pri__blue);
+      border-radius: 8px;
+      padding: 12px 20px;
+      box-shadow: 0 2px 10px hsla(220, 58%, 31%, 0.1);
+    }
+  }
+
+  &__title {
+    font-size: 14px;
+    color: var(--pri__blue-text);
+  }
+
+  &__btns {
+    @include m.flex(row, center, space-between);
+    margin-top: 30px;
+    gap: 14px;
+
+    &--reset,
+    &--filter {
+      background: none;
+      padding: 12px 30px;
+      font-weight: 600;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    &--reset {
+      border: 2px solid var(--pri__blue-text);
+      color: var(--pri__blue-text);
+    }
+
+    &--filter {
+      background: var(--pri__cyan);
+      border: 2px solid transparent;
+      color: white;
+    }
+  }
+}

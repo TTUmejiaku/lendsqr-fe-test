@@ -1,37 +1,25 @@
-@import "@radix-ui/colors/black-alpha.css";
-@import "@radix-ui/colors/mauve.css";
-@import "@radix-ui/colors/violet.css";
+@use "../../abstracts/breakpoints" as b;
+@use "../../abstracts/functions.scss" as f;
+@use "../../abstracts/mixins.scss" as m;
 
 .SelectTrigger {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  padding: 0 15px;
-  font-size: 13px;
+  padding: 12px 15px;
   line-height: 1;
-  height: 35px;
   gap: 5px;
-  background-color: hsla(220, 58%, 31%, 0.1);
-  color: var(--pri__blue-text);
-  font-family: var(--ff__work-sans);
-  box-shadow: 0 2px 10px hsla(220, 58%, 31%, 0.1);
-}
-.SelectTrigger:hover {
-  background-color: hsla(220, 58%, 31%, 0.4);
-}
-.SelectTrigger:focus {
-  box-shadow: 0 0 0 2px black;
-}
-.SelectTrigger[data-placeholder] {
-  color: var(--pri__blue-text);
 }
 
 .SelectIcon {
   color: var(--pri__blue);
+  width: 16px;
+  height: 16px;
 }
 
 .SelectContent {
+  z-index: 20;
   overflow: hidden;
   background-color: white;
   border-radius: 6px;
@@ -45,12 +33,10 @@
 }
 
 .SelectItem {
+  @include m.flex-ai(row, center);
   font-size: 13px;
   line-height: 1;
-  color: var(--pri__blue-text);
   border-radius: 3px;
-  display: flex;
-  align-items: center;
   height: 25px;
   padding: 0 35px 0 25px;
   position: relative;

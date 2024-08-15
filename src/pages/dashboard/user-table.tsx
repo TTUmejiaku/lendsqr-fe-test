@@ -1,21 +1,17 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useReducer } from "react";
 import {
-  getCoreRowModel,
   useReactTable,
-  getSortedRowModel,
   SortingState,
   ColumnFiltersState,
+  VisibilityState,
+  getCoreRowModel,
+  getSortedRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
-  VisibilityState,
+  getFacetedRowModel,
+  getFacetedUniqueValues,
 } from "@tanstack/react-table";
-import {
-  TableLegend,
-  // FilterTableBoolean,
-  // SearchTableGlobal,
-  // TableLegend,
-  TableTemplate,
-} from "@/components/index";
+import { TableLegend, TableTemplate } from "@/components/index";
 import { columns } from "./users-column";
 import { UserInfo } from "@/types";
 import { fetchUsers } from "@/lib/utils";
@@ -25,7 +21,7 @@ export default function UsersTable() {
   const isWindowAbove1600 = useMediaQuery(1600);
   const isWindowAbove1000 = useMediaQuery(1000);
   const isWindowAbove640 = useMediaQuery(640);
-  const [isRerender, setIsRerender] = useState<boolean>(false);
+  const rerender = useReducer(() => ({}), {})[1];
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(true);
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
@@ -48,7 +44,7 @@ export default function UsersTable() {
     };
 
     getUsers();
-  }, [isRerender]);
+  }, []);
 
   useEffect(() => {
     setColumnVisibility((prevVisibility) => ({
@@ -70,19 +66,23 @@ export default function UsersTable() {
       globalFilter,
       columnVisibility,
     },
-    onColumnVisibilityChange: setColumnVisibility,
-    onSortingChange: setSorting,
-    getSortedRowModel: getSortedRowModel(),
-    onColumnFiltersChange: setColumnFilters,
-    getFilteredRowModel: getFilteredRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
     columnResizeMode: "onChange",
+    onSortingChange: setSorting,
     onGlobalFilterChange: setGlobalFilterValue,
+    onColumnVisibilityChange: setColumnVisibility,
+    onColumnFiltersChange: setColumnFilters,
+    getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    getFacetedRowModel: getFacetedRowModel(),
+    getFacetedUniqueValues: getFacetedUniqueValues(),
+    getPaginationRowModel: getPaginationRowModel(),
     meta: {
       isDropdownOpen,
       setIsDropdownOpen,
-      isRerender,
-      handleRerender: () => setIsRerender(!isRerender),
+      setGlobalFilterValue,
+      setColumnFilters,
+      rerender,
+      usersData,
       closeDropdown: () => setIsDropdownOpen(false),
       openDropdown: () => setIsDropdownOpen(true),
     },
@@ -90,19 +90,6 @@ export default function UsersTable() {
 
   return (
     <div className='table-wrapper mt-40 '>
-      {/* <section className='flex items-center justify-between mb-5'>
-        <div className='flex items-center gap-5'>
-          <SearchTableGlobal
-            globalFilterValue={globalFilter}
-            setGlobalFilterValue={setGlobalFilterValue}
-          />
-          <FilterTableBoolean
-            table={table}
-            tableColumn='active'
-            selectOptions={["All", "Active", "Inactive"]}
-          />
-        </div>
-      </section> */}
       <TableTemplate columnsLength={columns.length} table={table} />
       <TableLegend table={table} pageSizesArr={[5, 10, 15, 20, 30]} />
     </div>

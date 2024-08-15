@@ -10,6 +10,25 @@ export type FormValues = {
   password: string;
 };
 
+export type SelectOptions = string | number;
+export type SelectOptionsObj = {
+  id: string;
+  name: string;
+  value: string | undefined;
+};
+
+export type DropdownSelectProps = {
+  selectedValue: string | undefined;
+  handleValueChange: (value: string) => void;
+  selectOptions: SelectOptions[];
+  // selectOptions: SelectOptions[];
+};
+export type DropdownSelectProps2 = {
+  selectedValue: string | undefined;
+  handleValueChange: (value: string) => void;
+  selectOptions: SelectOptionsObj[];
+};
+
 export type Errors = {
   [key: string]: string | undefined;
 };

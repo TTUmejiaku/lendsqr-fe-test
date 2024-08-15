@@ -5,14 +5,12 @@ import {
   ChevronsLeft,
   ChevronsRight,
 } from "lucide-react";
-import * as Select from "@radix-ui/react-select";
-import { forwardRef } from "react";
-import classnames from "classnames";
-import { CheckIcon, ChevronDownIcon } from "@radix-ui/react-icons";
+import { SelectRowsPerPage } from "@/components";
+import { SelectOptions } from "@/types";
 
 interface TableLegendProps<TData> {
   table: Table<TData>;
-  pageSizesArr: number[];
+  pageSizesArr: SelectOptions[];
 }
 
 export default function TableLegend<TData>({
@@ -24,7 +22,7 @@ export default function TableLegend<TData>({
   };
 
   return (
-    <div className='table__legend '>
+    <div className='table__legend'>
       <section className='table__legend-left'>
         <span className=''>
           Showing
@@ -39,28 +37,11 @@ export default function TableLegend<TData>({
 
       <section className='table__legend-center'>
         <span className=''>Rows per page</span>
-        <Select.Root
-          value={String(table.getState().pagination.pageSize)}
-          onValueChange={handlePageSizeChange}
-        >
-          <Select.Trigger className='SelectTrigger '>
-            <Select.Value placeholder='Select load limit' />
-            <Select.Icon className='SelectIcon'>
-              <ChevronDownIcon />
-            </Select.Icon>
-          </Select.Trigger>
-          <Select.Portal>
-            <Select.Content className='SelectContent'>
-              <Select.Viewport className='SelectViewport'>
-                {pageSizesArr.map((pageSize) => (
-                  <SelectItem key={pageSize} value={String(pageSize)}>
-                    {pageSize}
-                  </SelectItem>
-                ))}
-              </Select.Viewport>
-            </Select.Content>
-          </Select.Portal>
-        </Select.Root>
+        <SelectRowsPerPage
+          handleValueChange={handlePageSizeChange}
+          selectOptions={pageSizesArr}
+          selectedValue={String(table.getState().pagination.pageSize)}
+        />
       </section>
 
       <section className='table__legend-right'>
@@ -94,21 +75,3 @@ export default function TableLegend<TData>({
     </div>
   );
 }
-
-const SelectItem = forwardRef<
-  React.ElementRef<typeof Select.Item>,
-  React.ComponentPropsWithoutRef<typeof Select.Item>
->(({ children, className, ...props }, forwardedRef) => {
-  return (
-    <Select.Item
-      className={classnames("SelectItem", className)}
-      {...props}
-      ref={forwardedRef}
-    >
-      <Select.ItemText>{children}</Select.ItemText>
-      <Select.ItemIndicator className='SelectItemIndicator'>
-        <CheckIcon />
-      </Select.ItemIndicator>
-    </Select.Item>
-  );
-});

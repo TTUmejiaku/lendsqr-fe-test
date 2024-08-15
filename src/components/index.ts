@@ -6,4 +6,7 @@ export { default as DashboardLayout } from "./dashboard-layout";
 export { Card } from "./card";
 export { ColumnHeaderContent } from "./table/column-header";
 export { default as TableTemplate } from "./table/table-template";
+export { FilterDropdown } from "./table/filter-dropdown";
 export { default as TableLegend } from "./table/table-legend";
+export { SelectRowsPerPage, CustomSelect } from "./form-elements/select";
+export { DatePicker } from "./date-picker";

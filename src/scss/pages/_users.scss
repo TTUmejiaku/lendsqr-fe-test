@@ -2,6 +2,8 @@
 @use "../../scss/abstracts/functions.scss" as f;
 
 .users {
+  min-height: 94vh;
+
   &__stats {
     display: grid;
     grid-template-columns: 1fr;

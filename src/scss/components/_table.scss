@@ -22,15 +22,17 @@
   }
 
   &__column-header {
+    position: relative;
     @include m.flex-ai(row, center);
     gap: 8px;
-    color: var(--pri__blue-text);
-    font-size: 14px;
-    font-weight: bold;
     padding-block: 12px;
+    cursor: pointer;
 
+    &-text,
     img {
-      cursor: pointer;
+      color: var(--pri__blue-text);
+      font-size: 14px;
+      font-weight: bold;
     }
   }
 
@@ -86,6 +88,11 @@
     &-center {
       @include m.flex-ai(row, center);
       gap: 8px;
+      display: none;
+
+      @include b.mq-up(medium) {
+        display: flex;
+      }
     }
 
     &-right {

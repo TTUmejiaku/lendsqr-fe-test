@@ -1,5 +1,4 @@
 import { UserInfo } from "@/types";
-import { format, parseISO } from "date-fns";
 
 function parseStringToNumber(str: string) {
   return parseFloat(str.replace(/,/g, ""));
@@ -7,18 +6,6 @@ function parseStringToNumber(str: string) {
 
 export function formatNumber(value: number) {
   return new Intl.NumberFormat().format(value);
-}
-
-export function formatDate(date: string): string {
-  if (!date) return "";
-
-  try {
-    const parsedDate = parseISO(date);
-    return format(parsedDate, "MMM d, yyyy h:mm a");
-  } catch (error) {
-    console.error("Error parsing date:", error);
-    return "";
-  }
 }
 
 export const fetchUsers = async () => {
@@ -44,13 +31,8 @@ export function isActiveDate(date: string, monthsSinceLastActive: number) {
   return lastActiveDate >= cutoffDate;
 }
 
-export function getActiveUsers(
-  userData: UserInfo[],
-  activeWithinMonths: number
-) {
-  const activeUsers = userData.filter((user) =>
-    isActiveDate(user.lastActiveDate, activeWithinMonths)
-  );
+export function getActiveUsers(userData: UserInfo[]) {
+  const activeUsers = userData.filter((user) => user.status === "Active");
 
   return activeUsers.length;
 }
@@ -68,3 +50,13 @@ export function getUsersWithSavings(userData: UserInfo[]) {
 
   return usersWithSavings.length;
 }
+
+export const generateSelectOptionsObj = (uniqueValues: string[]) => {
+  const optionsObj = ["All", ...uniqueValues].map((el, i) => ({
+    id: el + i,
+    name: el,
+    value: el === "All" ? undefined : el,
+  }));
+
+  return optionsObj;
+};

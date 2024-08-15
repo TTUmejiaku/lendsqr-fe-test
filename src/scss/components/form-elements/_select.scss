@@ -1,0 +1,44 @@
+.select-page-rows__trigger {
+  color: var(--pri__blue-text);
+  font-family: var(--ff__work-sans);
+  box-shadow: 0 2px 10px hsla(220, 58%, 31%, 0.1);
+
+  &:hover {
+    background-color: hsla(220, 58%, 31%, 0.4);
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px black;
+  }
+}
+
+.select-page-rows__trigger [data-placeholder] {
+  color: var(--pri__blue-text);
+}
+
+.select-page-rows__item {
+  color: var(--pri__blue-text);
+}
+
+// Select Organization
+
+.custom-select__trigger {
+  background: transparent;
+  width: 100%;
+  color: black;
+  font-family: var(--ff__work-sans);
+  font-size: 14px;
+  border: 1px solid var(--pri__blue);
+  border-radius: 8px;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px hsla(220, 58%, 31%, 0.1);
+
+  &:focus {
+    box-shadow: 0 0 0 1px black;
+  }
+}
+
+.custom-select__item {
+  width: 216px;
+  font-size: 14px;
+  font-family: var(--ff__work-sans);
+}

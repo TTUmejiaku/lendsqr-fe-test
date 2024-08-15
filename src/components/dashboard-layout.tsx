@@ -1,19 +1,21 @@
 import { Sidebar, TopNav } from "@/components";
 import { Outlet } from "@tanstack/react-router";
+import { ColumnFiltersState } from "@tanstack/react-table";
 import { useState } from "react";
 
 declare module "@tanstack/react-table" {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface TableMeta<TData> {
     isDropdownOpen?: boolean;
     setIsDropdownOpen?: (isOpen: boolean) => void;
     closeDropdown?: () => void;
     openDropdown?: () => void;
     toggleDropdown?: () => void;
-    isRerender?: boolean;
-    handleRerender?: () => void;
     hasViewPermission?: boolean;
     hasUpdatePermission?: boolean;
+    setGlobalFilterValue?: React.Dispatch<React.SetStateAction<string>>;
+    rerender: React.DispatchWithoutAction;
+    usersData: TData[];
+    setColumnFilters: React.Dispatch<React.SetStateAction<ColumnFiltersState>>;
   }
 }
 

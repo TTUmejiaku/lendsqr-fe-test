@@ -6,7 +6,7 @@ type CardProps = {
 
 export const Card = ({ imageURL, title, total }: CardProps) => {
   return (
-    <div className='card card-box-shadow'>
+    <div className='card box-shadow'>
       <img src={imageURL} alt='' />
       <h4>{title}</h4>
       <p>{total}</p>
