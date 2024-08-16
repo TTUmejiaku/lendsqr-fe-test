@@ -1,5 +1,10 @@
 import { useLoaderData } from "@tanstack/react-router";
-import { UserDetailsTopNav, UserInfoHeader } from "./components";
+import {
+  UserDetailsTopNav,
+  UserInfoHeader,
+  UserInfoTabsContent,
+} from "./components";
+import { CustomTabsProvider } from "@/context/tabs-context";
 
 export default function UserDetailsPage() {
   const userData = useLoaderData({
@@ -9,7 +14,10 @@ export default function UserDetailsPage() {
   return (
     <div>
       <UserDetailsTopNav />
-      <UserInfoHeader userData={userData} />
+      <CustomTabsProvider defaultValue='General Details'>
+        <UserInfoHeader userData={userData} />
+        <UserInfoTabsContent />
+      </CustomTabsProvider>
     </div>
   );
 }

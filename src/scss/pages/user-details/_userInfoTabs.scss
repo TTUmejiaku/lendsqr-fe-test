@@ -1,0 +1,42 @@
+@use "../../abstracts/breakpoints" as b;
+@use "../../abstracts/functions.scss" as f;
+@use "../../abstracts/mixins.scss" as m;
+
+.userInfoTabs {
+  &__list {
+    overflow-x: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  &__listWrapper {
+    margin-top: 40px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__trigger {
+    padding: 10px 25px;
+    scroll-snap-align: start;
+    background-color: transparent;
+    border-radius: 0px;
+    font-weight: normal;
+    color: var(--clr-blue-08);
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+
+    &[data-state="active"] {
+      color: var(--clr-cyan);
+      border-bottom-color: var(--clr-cyan);
+      font-weight: bold;
+    }
+  }
+}

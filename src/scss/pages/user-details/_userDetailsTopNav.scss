@@ -45,7 +45,6 @@
       &:focus,
       &:focus-visible {
         box-shadow: 0px 0px 4px currentColor;
-        border: 1px solid currentColor;
       }
 
       @include b.mq-up(medium) {
