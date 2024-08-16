@@ -9,6 +9,7 @@ export enum FileRoute {
   Root = "/",
   Dashboard = "/dashboard",
   Users = "/users",
+  UserDetails = "/user-details/$userId",
 }
 
 export enum Status {
@@ -33,3 +34,12 @@ export const COLOR_MAP: ColorMap = {
   pending: { bg: "rgba(233, 178, 0, 0.1)", text: "#E9B200" },
   inactive: { bg: "rgba(84, 95, 125, 0.1)", text: "#545F7D" },
 };
+
+export const TAB_DATA = [
+  "General Details",
+  "Documents",
+  "Bank Details",
+  "Loans",
+  "Savings",
+  "App and System",
+];

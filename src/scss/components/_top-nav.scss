@@ -31,7 +31,7 @@
     input {
       width: 100%;
       border-radius: 8px 0 0 8px;
-      border: 1px solid var(--pri__blue);
+      border: 1px solid var(--clr-blue);
       padding: 12px 0 12px 20px;
 
       &::placeholder {
@@ -41,7 +41,7 @@
     }
 
     button {
-      background-color: var(--pri__cyan);
+      background-color: var(--clr-cyan);
       border-radius: 0 4px 4px 0;
       cursor: pointer;
       position: absolute;
@@ -66,7 +66,7 @@
       margin-right: clamp(24px, 8vw, 62px);
       font-style: normal;
       font-size: var(--fs-small);
-      color: var(--pri__blue);
+      color: var(--clr-blue);
 
       @include b.mq-up(medium) {
         display: inline-block;
@@ -111,7 +111,7 @@
     p {
       font-weight: 500;
       font-size: var(--fs-small);
-      color: var(--pri__blue);
+      color: var(--clr-blue);
     }
 
     .arrow-down {

@@ -179,10 +179,9 @@
   transition-duration: 150ms;
   transition-timing-function: ease-in-out;
 
-  // &:focus {
-  //   // background-color: var(--accent);
-  //   color: var(--accent-foreground);
-  // }
+  &:focus {
+    background-color: var(--accent);
+  }
 
   &[data-disabled] {
     pointer-events: none;

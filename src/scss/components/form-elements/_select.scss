@@ -1,5 +1,5 @@
 .select-page-rows__trigger {
-  color: var(--pri__blue-text);
+  color: var(--clr-blue-08);
   font-family: var(--ff__work-sans);
   box-shadow: 0 2px 10px hsla(220, 58%, 31%, 0.1);
 
@@ -12,11 +12,11 @@
 }
 
 .select-page-rows__trigger [data-placeholder] {
-  color: var(--pri__blue-text);
+  color: var(--clr-blue-08);
 }
 
 .select-page-rows__item {
-  color: var(--pri__blue-text);
+  color: var(--clr-blue-08);
 }
 
 // Select Organization
@@ -27,7 +27,7 @@
   color: black;
   font-family: var(--ff__work-sans);
   font-size: 14px;
-  border: 1px solid var(--pri__blue);
+  border: 1px solid var(--clr-blue);
   border-radius: 8px;
   justify-content: space-between;
   box-shadow: 0 2px 10px hsla(220, 58%, 31%, 0.1);

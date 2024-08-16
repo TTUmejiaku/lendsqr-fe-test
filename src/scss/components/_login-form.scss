@@ -29,7 +29,7 @@
       top: 50%;
       right: 10%;
       translate: 50% -50%;
-      color: var(--pri__cyan);
+      color: var(--clr-cyan);
       font-size: 12px;
       letter-spacing: 0.2rem;
       cursor: pointer;
@@ -43,13 +43,13 @@
 
   & > p {
     font-size: 12px;
-    color: var(--pri__cyan);
+    color: var(--clr-cyan);
     letter-spacing: 0.1rem;
     font-weight: 600;
   }
 
   button {
-    background-color: var(--pri__cyan);
+    background-color: var(--clr-cyan);
     font-weight: 500;
     font-size: 14px;
     width: 100%;
@@ -59,7 +59,7 @@
     cursor: pointer;
 
     &.isError {
-      background-color: var(--pri__cyan);
+      background-color: var(--clr-cyan);
       opacity: 0.5;
       pointer-events: none;
     }

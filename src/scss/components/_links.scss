@@ -10,13 +10,13 @@
     background-color 0.3s ease;
 
   &:hover {
-    border-color: var(--pri__cyan);
+    border-color: var(--clr-cyan);
     background-color: hsla(180, 60%, 51%, 0.06);
   }
 
   p {
     font-size: 16px;
-    color: var(--pri__blue-text);
+    color: var(--clr-blue-08);
   }
 
   &-arrow-down {

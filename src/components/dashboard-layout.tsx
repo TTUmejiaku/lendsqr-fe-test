@@ -5,13 +5,6 @@ import { useState } from "react";
 
 declare module "@tanstack/react-table" {
   interface TableMeta<TData> {
-    isDropdownOpen?: boolean;
-    setIsDropdownOpen?: (isOpen: boolean) => void;
-    closeDropdown?: () => void;
-    openDropdown?: () => void;
-    toggleDropdown?: () => void;
-    hasViewPermission?: boolean;
-    hasUpdatePermission?: boolean;
     setGlobalFilterValue?: React.Dispatch<React.SetStateAction<string>>;
     rerender: React.DispatchWithoutAction;
     usersData: TData[];
@@ -31,7 +24,7 @@ export default function DashboardLayout() {
       <TopNav showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
       <main className='dashboard__container '>
         <Sidebar showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
-        <section className='dashboard__content'>
+        <section className='dashboard__content '>
           <Outlet />
         </section>
       </main>

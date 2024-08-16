@@ -13,7 +13,7 @@
 }
 
 .SelectIcon {
-  color: var(--pri__blue);
+  color: var(--clr-blue);
   width: 16px;
   height: 16px;
 }
@@ -43,13 +43,13 @@
   user-select: none;
 }
 .SelectItem[data-disabled] {
-  color: var(--pri__blue-text);
+  color: var(--clr-blue-08);
   pointer-events: none;
 }
 .SelectItem[data-highlighted] {
   outline: none;
   background-color: hsla(220, 58%, 31%, 0.1);
-  color: var(--pri__blue);
+  color: var(--clr-blue);
 }
 
 .SelectLabel {

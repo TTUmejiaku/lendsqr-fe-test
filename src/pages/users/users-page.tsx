@@ -13,11 +13,11 @@ import {
   getUsersWithLoan,
   getUsersWithSavings,
 } from "@/lib/utils";
-import UsersTable from "./user-table";
+import UsersTable from "./components/users-table";
 
 export default function UsersPage() {
   const users = useLoaderData({
-    from: "/_dashboardLayout/users",
+    from: "/_dashboardLayout/users/",
   }) as UserInfo[];
 
   const numberOfActiveUsers = getActiveUsers(users);

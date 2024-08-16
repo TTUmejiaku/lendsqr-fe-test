@@ -4,7 +4,7 @@
   text-align: left;
   font-weight: 500;
   background: transparent;
-  border: 1px solid var(--pri__blue);
+  border: 1px solid var(--clr-blue);
   width: 100%;
   color: black;
   font-family: var(--ff__work-sans);
@@ -18,7 +18,7 @@
   }
 
   &--muted {
-    color: var(--pri__blue-text);
+    color: var(--clr-blue-08);
     font-weight: normal;
   }
 
@@ -71,5 +71,5 @@
   align-items: center;
   white-space: nowrap;
   border: 0;
-  color: var(--pri__blue);
+  color: var(--clr-blue);
 }

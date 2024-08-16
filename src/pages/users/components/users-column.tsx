@@ -1,8 +1,8 @@
-import { createColumnHelper, TableMeta } from "@tanstack/react-table";
+import { createColumnHelper } from "@tanstack/react-table";
 import { UserInfo } from "@/types";
 import { formatDate, isSameDate } from "@/lib";
 import { COLOR_MAP } from "@/constants";
-import { MoreVertical } from "lucide-react";
+import { TableActionsDropdown } from "@/components";
 
 const columnHelper = createColumnHelper<UserInfo>();
 export const columns = [
@@ -54,19 +54,15 @@ export const columns = [
       );
     },
   }),
-
   columnHelper.display({
     id: "actions",
     size: 20,
     enableResizing: false,
     enableSorting: false,
-    cell: ({ row, table }) => {
-      const userInfo = row.original as UserInfo;
+    cell: ({ row }) => {
+      const { id } = row.original as UserInfo;
 
-      const { openDropdown } = table?.options.meta as TableMeta<UserInfo>;
-
-      console.log(userInfo.userName);
-      return <MoreVertical />;
+      return <TableActionsDropdown userId={id} />;
     },
   }),
 ];

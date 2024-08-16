@@ -1,0 +1,21 @@
+.navigateBack {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  p {
+    font-family: var(--ff__work-sans);
+    font-size: 16px;
+    color: var(--clr-blue-08);
+  }
+}
+
+.navigateBackButton {
+  background: var(--clr-blue);
+  font-family: var(--ff__work-sans);
+  font-size: 18px;
+  color: var(--clr-white-bg);
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 20px 40px;
+}

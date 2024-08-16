@@ -30,3 +30,8 @@ export { default as activeUsers } from "./active-users-icon.svg";
 export { default as usersWithLoans } from "./users-with-loan-icon.svg";
 export { default as usersWithSavings } from "./users-with-savings-icon.svg";
 export { default as filterIcon } from "./filter-results-icon.svg";
+export { default as eye } from "./eye.svg";
+export { default as userX } from "./user-x.svg";
+export { default as userTick } from "./user-tick.svg";
+export { default as longArrowIcon } from "./long-arrow-icon.svg";
+export { default as personIcon } from "./person-icon.svg";

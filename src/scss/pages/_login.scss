@@ -46,7 +46,7 @@
     .header-text {
       font-weight: bold;
       font-size: var(--fs-large);
-      color: var(--pri__blue);
+      color: var(--clr-blue);
       letter-spacing: -0.1rem;
       text-align: center;
 
@@ -59,7 +59,7 @@
       font-size: var(--fs-normal);
       font-weight: normal;
       margin-top: 14px;
-      color: var(--pri__blue-text);
+      color: var(--clr-blue-08);
       text-align: center;
 
       @include b.mq-up(large) {

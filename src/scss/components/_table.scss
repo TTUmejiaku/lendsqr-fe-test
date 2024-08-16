@@ -30,7 +30,7 @@
 
     &-text,
     img {
-      color: var(--pri__blue-text);
+      color: var(--clr-blue-08);
       font-size: 14px;
       font-weight: bold;
     }
@@ -49,7 +49,7 @@
   &__body-cell {
     padding-block: 20px;
     font-size: 14px;
-    color: var(--pri__blue-text);
+    color: var(--clr-blue-08);
     border-top: 1px solid rgba(33, 63, 125, 0.05);
     padding-right: 10px;
   }
@@ -67,14 +67,14 @@
 
   &__date {
     font-size: 14px;
-    color: var(--pri__blue-text);
+    color: var(--clr-blue-08);
   }
 
   &__legend {
     @include m.flex(row, center, space-between);
     font-family: var(--ff__work-sans);
     margin-top: 20px;
-    color: var(--pri__blue-text);
+    color: var(--clr-blue-08);
     font-style: 14px;
 
     &-left {

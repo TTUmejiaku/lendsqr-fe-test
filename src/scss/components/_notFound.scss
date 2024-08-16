@@ -1,0 +1,17 @@
+@use "../../scss/abstracts/breakpoints" as b;
+@use "../../scss/abstracts/functions.scss" as f;
+@use "../../scss/abstracts/mixins.scss" as m;
+
+.notFound {
+  @include m.flex(column, center, center);
+  min-height: 60vh;
+  gap: 40px;
+
+  & > h1 {
+    font-size: f.rem(32);
+
+    @include b.mq-up(medium) {
+      font-size: f.rem(40);
+    }
+  }
+}

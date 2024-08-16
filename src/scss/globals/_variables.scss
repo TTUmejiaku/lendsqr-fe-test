@@ -1,10 +1,11 @@
 :root {
   /***** colors *****/
-  --pri__cyan: hsl(180, 60%, 51%); //#39CDCC
-  --pri__blue: hsl(220, 58%, 31%); //#213F7D
-  --pri__blue-text: hsla(224, 20%, 41%, 0.851); //#545F7D
-  --accent__background: #fbfbfb; //#FBFBFB
+  --clr-cyan: hsl(180, 60%, 51%); //#39CDCC
+  --clr-blue: hsl(220, 58%, 31%); //#213F7D
+  --clr-blue-08: hsla(224, 20%, 41%, 0.851); //#545F7D
+  --clr-white-bg: hsl(0, 0%, 98%); //#FBFBFB
   --accent: hsla(224, 20%, 41%, 0.15);
+  --clr-red: hsl(345, 97%, 45%);
 
   /***** fonts *****/
   --ff__avenir-next: "Avenir Next", sans-serif;

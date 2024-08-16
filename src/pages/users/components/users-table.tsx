@@ -22,7 +22,6 @@ export default function UsersTable() {
   const isWindowAbove1000 = useMediaQuery(1000);
   const isWindowAbove640 = useMediaQuery(640);
   const rerender = useReducer(() => ({}), {})[1];
-  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(true);
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [usersData, setUsersData] = useState<UserInfo[]>([]);
@@ -77,14 +76,10 @@ export default function UsersTable() {
     getFacetedUniqueValues: getFacetedUniqueValues(),
     getPaginationRowModel: getPaginationRowModel(),
     meta: {
-      isDropdownOpen,
-      setIsDropdownOpen,
       setGlobalFilterValue,
       setColumnFilters,
       rerender,
       usersData,
-      closeDropdown: () => setIsDropdownOpen(false),
-      openDropdown: () => setIsDropdownOpen(true),
     },
   });
 

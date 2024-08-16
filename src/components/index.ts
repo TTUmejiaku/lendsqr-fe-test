@@ -8,5 +8,8 @@ export { ColumnHeaderContent } from "./table/column-header";
 export { default as TableTemplate } from "./table/table-template";
 export { FilterDropdown } from "./table/filter-dropdown";
 export { default as TableLegend } from "./table/table-legend";
+export { default as TableActionsDropdown } from "./table/table-actions";
 export { SelectRowsPerPage, CustomSelect } from "./form-elements/select";
 export { DatePicker } from "./date-picker";
+export { NavigateBack, NavigateBackButton } from "./navigate-back-btns";
+export { NotFound } from "./not-found";

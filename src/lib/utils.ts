@@ -22,6 +22,24 @@ export const fetchUsers = async () => {
   }
 };
 
+export const getUser = async (id: string) => {
+  try {
+    const response = await fetch("/src/mock-data/USER_DATA.json");
+
+    if (!response.ok) {
+      throw new Error(`Network response was not ok: ${response.statusText}`);
+    }
+
+    const users = (await response.json()) as UserInfo[];
+    const userData = users.find((user) => user.id === id);
+
+    return userData;
+  } catch (error) {
+    console.error("Failed to fetch user:", error);
+    throw error;
+  }
+};
+
 export function isActiveDate(date: string, monthsSinceLastActive: number) {
   const now = new Date();
   const cutoffDate = new Date();

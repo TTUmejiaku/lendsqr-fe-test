@@ -1,0 +1,30 @@
+@use "../../scss/abstracts/breakpoints" as b;
+@use "../../scss/abstracts/functions.scss" as f;
+@use "../../scss/abstracts/mixins.scss" as m;
+
+.table-actions-dropdown {
+  background-color: white;
+  padding: f.rem(20);
+  border-radius: 0.25rem;
+  font-family: var(--ff__work-sans);
+
+  p {
+    font-size: f.rem(14);
+    color: var(--clr-blue-08);
+    font-weight: 500;
+  }
+
+  &__item {
+    gap: 8px;
+    padding-inline: f.rem(10);
+
+    &:not(:first-child) {
+      margin-top: f.rem(16);
+    }
+  }
+
+  &__link {
+    @include m.flex(row, center, center);
+    gap: 8px;
+  }
+}
