@@ -29,5 +29,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src", "z-archive"]
+  "include": ["src", "z-archive"],
+  "types": ["node"]
 }
