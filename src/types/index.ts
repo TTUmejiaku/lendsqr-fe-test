@@ -21,8 +21,8 @@ export type DropdownSelectProps = {
   selectedValue: string | undefined;
   handleValueChange: (value: string) => void;
   selectOptions: SelectOptions[];
-  // selectOptions: SelectOptions[];
 };
+
 export type DropdownSelectProps2 = {
   selectedValue: string | undefined;
   handleValueChange: (value: string) => void;
@@ -78,4 +78,10 @@ export type UserInfo = {
     relationship: string;
     gender: string;
   };
+};
+
+export type CategoryList = {
+  id: string;
+  label: string;
+  text: string | number | null;
 };

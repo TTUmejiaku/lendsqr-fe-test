@@ -1,3 +1,6 @@
+// Supports weights 100-900
+@import "@fontsource-variable/work-sans";
+
 :root {
   /***** colors *****/
   --clr-cyan: hsl(180, 60%, 51%); //#39CDCC
@@ -9,7 +12,7 @@
 
   /***** fonts *****/
   --ff__avenir-next: "Avenir Next", sans-serif;
-  --ff__work-sans: "Work Sans", sans-serif;
+  --ff__work-sans: "Work Sans Variable", sans-serif;
   --fs-xLarge: clamp(3rem, 1rem + 4.2vw, 4.5rem);
   --fs-large: clamp(1.9rem, 1rem + 3.5vw, 2.5rem);
   --fs-normal: clamp(1.1rem, 0.875rem + 5.5vw, 1.25rem);

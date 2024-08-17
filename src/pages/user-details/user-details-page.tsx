@@ -14,9 +14,12 @@ export default function UserDetailsPage() {
   return (
     <div>
       <UserDetailsTopNav />
-      <CustomTabsProvider defaultValue='General Details'>
+      <CustomTabsProvider
+        defaultValue='General Details'
+        className='userInfoTabs'
+      >
         <UserInfoHeader userData={userData} />
-        <UserInfoTabsContent />
+        <UserInfoTabsContent userData={userData} />
       </CustomTabsProvider>
     </div>
   );

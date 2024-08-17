@@ -1,3 +1,4 @@
+import { BASE_URL } from "@/constants";
 import { UserInfo } from "@/types";
 
 function parseStringToNumber(str: string) {
@@ -10,7 +11,7 @@ export function formatNumber(value: number) {
 
 export const fetchUsers = async () => {
   try {
-    const response = await fetch("/src/mock-data/USER_DATA.json");
+    const response = await fetch(BASE_URL);
 
     if (!response.ok) {
       throw new Error(`Network response was not ok: ${response.statusText}`);
@@ -24,7 +25,7 @@ export const fetchUsers = async () => {
 
 export const getUser = async (id: string) => {
   try {
-    const response = await fetch("/src/mock-data/USER_DATA.json");
+    const response = await fetch(BASE_URL);
 
     if (!response.ok) {
       throw new Error(`Network response was not ok: ${response.statusText}`);

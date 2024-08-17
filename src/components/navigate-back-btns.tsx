@@ -5,11 +5,16 @@ import { Link } from "@tanstack/react-router";
 type NavigateBackProps = {
   href: FileRoute;
   label: string;
+  btnClassNames?: string;
 };
 
-export function NavigateBack({ href, label }: NavigateBackProps) {
+export function NavigateBack({
+  href,
+  label,
+  btnClassNames,
+}: NavigateBackProps) {
   return (
-    <Link to={href} className='navigateBack'>
+    <Link to={href} className={`navigateBack ${btnClassNames}`}>
       <img src={longArrowIcon} alt={label} />
       <p>{label}</p>
     </Link>

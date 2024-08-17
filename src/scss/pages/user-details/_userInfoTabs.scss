@@ -3,16 +3,14 @@
 @use "../../abstracts/mixins.scss" as m;
 
 .userInfoTabs {
-  &__list {
-    overflow-x: hidden;
-    white-space: nowrap;
-    width: 100%;
-  }
+  width: 100%;
 
-  &__listWrapper {
+  &__list {
+    width: 100%;
     margin-top: 40px;
     overflow-x: auto;
     white-space: nowrap;
+    justify-content: space-between;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -24,6 +22,7 @@
   }
 
   &__trigger {
+    width: 100%;
     padding: 10px 25px;
     scroll-snap-align: start;
     background-color: transparent;
@@ -36,7 +35,11 @@
     &[data-state="active"] {
       color: var(--clr-cyan);
       border-bottom-color: var(--clr-cyan);
-      font-weight: bold;
+      font-weight: 500;
+    }
+
+    @include b.mq-up(large) {
+      font-size: 1rem;
     }
   }
 }

@@ -2,6 +2,7 @@ export const REGEX_EMAIL = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 export const PASSWORD_LENGTH = 6;
 export const ACTIVE_WITHIN_MONTHS = 3;
 
+export const BASE_URL = "/src/mock-data/USERS_DATA.json";
 export const FACEBOOK_URL = "https://facebook.com";
 export const X_URL = "https://twitter.com";
 export const LinkedIn_URL = "https://linkedin.com";

@@ -1,0 +1,45 @@
+@use "../../abstracts/breakpoints" as b;
+@use "../../abstracts/functions.scss" as f;
+@use "../../abstracts/mixins.scss" as m;
+
+.userDetailsSection {
+  width: 100%;
+  border-radius: 4px;
+  padding: 0 30px 46px 30px;
+  overflow: hidden;
+}
+
+.userDetailsCategory {
+  font-family: var(--ff__work-sans);
+  border-bottom: 1px solid hsla(224, 20%, 41%, 0.16);
+  padding: 30px 0 28px;
+  width: 100%;
+
+  &__title {
+    color: var(--clr-blue);
+    font-size: f.rem(16);
+  }
+
+  &__wrapper {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 214px), 1fr));
+    row-gap: 30px;
+    column-gap: 30px;
+
+    @include b.mq-up(xLarge) {
+      column-gap: 60px;
+    }
+  }
+
+  &__label {
+    font-size: 12px;
+    color: var(--clr-blue-08);
+  }
+  &__text {
+    margin-top: 8px;
+    color: var(--clr-blue-08);
+    font-size: f.rem(16);
+    font-weight: 500;
+  }
+}

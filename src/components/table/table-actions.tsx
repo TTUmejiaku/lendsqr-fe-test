@@ -13,7 +13,7 @@ export default function TableActionsDropdown({ userId }: { userId: string }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <MoreVertical />
+        <MoreVertical style={{ cursor: "pointer" }} />
       </DropdownMenuTrigger>
 
       <DropdownMenuContent className='table-actions-dropdown box-shadow'>

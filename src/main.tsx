@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import "./scss/main.scss";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
+import "@fontsource-variable/work-sans";
 
 import { routeTree } from "./routeTree.gen";
 const router = createRouter({ routeTree });

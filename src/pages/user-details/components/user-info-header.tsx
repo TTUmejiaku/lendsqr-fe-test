@@ -12,7 +12,7 @@ export default function UserInfoHeader({ userData }: { userData: UserInfo }) {
 
   return (
     <section className='userInfoHeader'>
-      <div className='userInfoHeader__wrapper'>
+      <div className='userInfoHeader__wrapper '>
         <section className='userInfoHeader__nameAndAvatarWrapper '>
           <div className={`userInfoHeader__avatar ${avatar ? "" : "bg-color"}`}>
             <img src={avatar ? avatar : personIcon} alt='' />

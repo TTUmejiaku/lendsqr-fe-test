@@ -17,7 +17,6 @@ interface CustomTabsContentProps {
 
 const TabsContext = createContext<boolean | null>(null);
 
-// Create a custom Tabs wrapper component
 export function CustomTabsProvider({ children, ...props }: CustomTabsProps) {
   return (
     <Tabs {...props}>
@@ -34,13 +33,11 @@ function useTabsContext(): boolean {
   return context;
 }
 
-// Create component for TabsList
 export function CustomTabsList({ children, classNames }: CustomTabsListProps) {
   useTabsContext();
   return <TabsList className={classNames}>{children}</TabsList>;
 }
 
-// Create component for TabsContent
 export function CustomTabsContent({ children }: CustomTabsContentProps) {
   useTabsContext();
   return <>{children}</>;
